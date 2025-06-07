@@ -2,18 +2,25 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 設定字體 */
     display: flex; /* 使用 Flexbox 布局 */
     flex-direction: column; /* 內容垂直排列 */
-    justify-content: center; /* 主軸（垂直）置中 */
-    align-items: center; /* 交叉軸（水平）置中 */
+    /* 移除或註解掉 justify-content: center; */
+    justify-content: flex-start; /* 讓內容從上方開始排列 */
+    align-items: center;
     min-height: 100vh; /* 確保內容佔滿整個視窗高度 */
     margin: 0;
     background-color: #e0f7fa; /* 淺藍綠色背景 */
     color: #333; /* 文字顏色 */
-    overflow: hidden; /* 防止滾動條 */
+    /* 移除或註解掉 overflow: hidden; */
+
+    /* 增加頁面底部的內邊距，防止按鈕被截斷 */
+    padding-bottom: 50px; /* 給按鈕下方留出足夠空間，你可以調整這個值 */
+
+    /* 在 Flexbox 項目之間增加間距，讓佈局更彈性 */
+    gap: 20px; /* 為 h1, result-display, button 之間增加 20px 間距 */
 }
 
 h1 {
     color: #00796b; /* 深綠色標題 */
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* 這個 margin 會和 body 的 gap 共同作用 */
     font-size: 2.5em;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
@@ -23,7 +30,7 @@ h1 {
     border: 3px solid #00acc1; /* 藍綠色邊框 */
     border-radius: 15px; /* 圓角 */
     padding: 30px 60px;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* 這個 margin 會和 body 的 gap 共同作用 */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 較明顯的陰影 */
     text-align: center;
     font-size: 1.3em;
@@ -64,6 +71,4 @@ button:hover {
 
 button:active {
     background-color: #004085; /* 按下時顏色更深 */
-    transform: translateY(0); /* 按下時恢復原位 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
+    transform: translateY(0); /* 按下時恢復原位
